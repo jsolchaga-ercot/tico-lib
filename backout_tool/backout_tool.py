@@ -1,6 +1,6 @@
 from tkinter import filedialog
 import win32com.client
-from pyrtp.pwd import pwd
+#from pyrtp.pwd import pwd
 import pandas as pd
 
 
@@ -10,6 +10,8 @@ def main():
     pw_file = filedialog.askopenfilename(title="Select your PowerWorld case", filetypes= [("PowerWorld files", "*.pwb")])
     aux_file = filedialog.askopenfilename(title="Select aux file to create backout file", filetypes=[("Aux Files", "*.aux")])
     path = aux_file.split('.')[0] + '_BACKOUT.aux'
+    # Source Path... CHange
+    sourcePath = "\\\\ercot.com\departments\systemplanning\Software Upgrades\SysFiles\idvTOaux\\"
     # Create PowerWorld COM instance
     simauto_obj = win32com.client.Dispatch('pwrworld.SimulatorAuto')
     simauto_obj.OpenCase(pw_file)
@@ -22,6 +24,8 @@ def main():
 
     # Run Difference Case
     simauto_obj.OpenCase(pw_file)
+    simauto_obj.ProcessAuxFile(sourcePath + "NetworkModel.aux")
+    simauto_obj.ProcessAuxFile(sourcePath + "ChangeTolerances.aux")
     simauto_obj.RunScriptCommand(f"DiffFlowWriteCompleteModel(\"{path}\", YES, YES, YES, YES, PRIMARY, \"Network Model\",,,,\"NO\");")
     
 
