@@ -1,6 +1,5 @@
 from tkinter import filedialog
 import win32com.client
-from pyrtp.pwd import pwd
 import pandas as pd
 
 
