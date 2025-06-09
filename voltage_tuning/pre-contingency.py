@@ -15,7 +15,7 @@ def get_precontingency_violations(simauto_obj) -> pd.DataFrame:
     # Get all of the pre-contingency bus violations
     object_type = 'Bus'
     param_list = ['Number', 'Name', 'Vpu', 'LimitHighA', 'LimitHighB', 'ZoneName']
-    filter_name = 'Pre-Contingency Violations All Regions'
+    filter_name = 'Pre-Contingency WFW Violations'
     #filter_name = 'Pre-Contingency WFW Violations'
 
     # TODO: Figure out how to do advanced filters without the need of an advanced filter saved into the case
@@ -120,7 +120,7 @@ def setpoint_tuning(bus_number, bus_Vpu, bus_LimitHighA, df_gen, simauto_obj):
 
         if i > 10:
             print('Can\'t solve with setpoint voltages either.')
-            sys.exit()
+            #sys.exit()
             return False    
 
 
@@ -142,15 +142,14 @@ df_precontingency = get_precontingency_violations(simauto_obj)
 print(f'There are a total of {len(df_precontingency)} pre-contingency violations in WFW.')
 
 first = True
+ignore = []
 
-while not df_precontingency.empty:
-    if not first:
-        df_precontingency = get_precontingency_violations(simauto_obj)
+for i in range(len(df_precontingency)):
 
-    bus_number = df_precontingency.iloc[0]['Number']
-    bus_name = df_precontingency.iloc[0]['Name']
-    bus_Vpu = df_precontingency.iloc[0]['Vpu']
-    bus_LimitHighA = df_precontingency.iloc[0]['LimitHighA']
+    bus_number = df_precontingency.iloc[i]['Number']
+    bus_name = df_precontingency.iloc[i]['Name']
+    bus_Vpu = df_precontingency.iloc[i]['Vpu']
+    bus_LimitHighA = df_precontingency.iloc[i]['LimitHighA']
 
 
     # Grab the first pre-contingency high voltage
@@ -193,10 +192,10 @@ while not df_precontingency.empty:
         if not cap_solved:
             setpoint_solved = setpoint_tuning(bus_number, bus_Vpu, bus_LimitHighA, df_gen, simauto_obj)
 
+        #if not setpoint_solved:
+            #print(f'Pre-Contingency High Voltage Violation at {bus_name} ({bus_number}) requires more attention.')
 
-
-        # To avoid having to re-pull the pre-contingency violations on the first iteration
-        first = False
+    #df_precontingency = get_precontingency_violations(simauto_obj)
 
 
 print('T')

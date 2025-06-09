@@ -1,0 +1,816 @@
+SCRIPT
+{
+EnterMode(Edit);
+} 
+
+//CustomString:1 is County
+//CustomInteger:0 is Original Bus Zone Number
+//CustomString:0 is Original Bus Zone Name
+//CustomString:3 is 24RTP Officer Letter
+
+
+//////////////////////////////////////////////////////////////////////
+//The following loads are from TSR submissions WITHOUT topology changes//
+//////////////////////////////////////////////////////////////////////
+
+
+Load (BusNum,AreaName,ZoneName,ID,Status,LoadSMW,LoadSMVR,CustomString:1,CustomInteger:0,CustomString:0,CustomString:3)
+{
+ 1874  "ONCOR_ED" "NORTH_CE"	"1" "Closed"	288.0 96.0  	"TARRANT"	118 "O_TARRANT"	"24RTP Officer Letter"		// Not in Oncor's List
+ 1875  "ONCOR_ED" "NORTH_CE"	"1" "Closed"	288.0 96.0   	"TARRANT"	118 "O_TARRANT"	"24RTP Officer Letter"		// Not in Oncor's List
+ 2082  "ONCOR_ED" "NORTH_CE"	"1" "Closed"	310.5 103.5		"TARRANT"	118 "O_TARRANT"	"24RTP Officer Letter"		// Not in Oncor's List
+ 12394 "ONCOR_ED" "NORTH_CE"	"2" "Closed"	87.5  29.0		"DALLAS"  114 "O_DALLAS"  "24RTP Officer Letter"		// Not in Oncor's List
+ 12395 "ONCOR_ED" "NORTH_CE"	"1" "Closed"  87.5  29.0		"DALLAS"  114 "O_DALLAS"  "24RTP Officer Letter"		// Not in Oncor's List
+ 2815  "ONCOR_ED" "NORTH_CE"	"2" "Closed"	140.0 46.6		"DALLAS"  114 "O_DALLAS"  "24RTP Officer Letter"		// Not in Oncor's List
+}
+
+Load (BusNum,ID,Status,AGC,SMW,SMvar,IMW,IMvar,ZMW,ZMvar,DistStatus,DistMWInput,
+   DistMvarInput,Interruptible,MWMax,MWMin,DistMWMax,DistMWMin,DistUnitTypeCode,
+   LoadModelGroup,AreaNumber,ZoneNumber,BANumber,OwnerNumber,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,AllLabels,CustomInteger:0,
+   CustomString:0,CustomString:1,CustomString:3)
+{
+  2260 "2 " "Closed" "YES"    3.00000    1.00000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "    3.00000    0.00000    0.00000    0.00000 "UN" ""      1    114      1    794 "" "" "" "YES" "" 114	"O_DALLAS"	 "Dallas"	"24RTP Officer Letter" 		//TSR_1920						// Not in Oncor's List
+  1714 "2 " "Closed" "YES"   25.00000    8.30000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "   25.00000    0.00000    0.00000    0.00000 "UN" ""      1    150      1    794 "" "" "" "YES" "" 150	"O_GRAYSON"	 "Grayson"	"24RTP Officer Letter" 	//TSR_2098_load1
+  1749 "2 " "Closed" "YES"   25.00000    8.30000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "   25.00000    0.00000    0.00000    0.00000 "UN" ""      1    150      1    794 "" "" "" "YES" "" 150	"O_GRAYSON"	 "Grayson"	"24RTP Officer Letter" 	//TSR_2098_load2
+  2691 "4 " "Closed" "YES"   58.00000   19.30000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "   58.00000    0.00000    0.00000    0.00000 "UN" ""      1    151      1    794 "" "" "" "YES" "" 151	"O_COLLIN"	 "Collin"	"24RTP Officer Letter" 		//TSR_2201						// Not in Oncor's List
+  12303 "1 " ""       ""      80.00000   26.67000 "" "" "" "" "" "" "" ""   80.00000 "" "" "" "" "_same_" "" "" "" "" "" "" "_same_" "" "_same_" _same_ "_same_" "_same_" "24RTP Officer Letter" //TSR_2376_load1		// Found in Oncor's List                                                                                                                                
+  12304 "1 " ""       ""      80.00000   26.67000 "" "" "" "" "" "" "" ""   80.00000 "" "" "" "" "_same_" "" "" "" "" "" "" "_same_" "" "_same_" _same_ "_same_" "_same_" "24RTP Officer Letter" //TSR_2376_load2		// Found in Oncor's List                                                                                                                           
+}
+
+
+Load (BusNum,ID,Status,SMW,SMvar,CustomString:1,CustomInteger:0,CustomString:0,CustomString:3)
+{
+ 152534  "1"  "Closed"    155.000    51.6700  "YOUNG"     1084 "E_YOUNG"    "24RTP Officer Letter"
+ 13430   "2"  "Closed"    210.000    52.6300  "MILAM"     137  "O_MILAM"    "24RTP Officer Letter"
+ 2848    "1"  "Closed"    336.000    112.000  "ELLIS"     114  "O_DALLAS"   "24RTP Officer Letter"		// Not in Oncor's List
+ 3069    "1"  "Closed"    170.000    56.6700  "DALLAS"    ""   ""           "24RTP Officer Letter"		// Not in Oncor's List
+ 3069    "3"  "Closed"    567.000    192.000  "DALLAS"    ""   ""           "24RTP Officer Letter"		// Not in Oncor's List
+}
+
+Load (BusNum,ID,Status,SMW,SMvar,CustomString:1,CustomInteger:0,CustomString:0,CustomString:3)
+{
+  2438   "6 "   "Closed"    200.0     66.6   "KAUFMAN"	113	"O_KAUFMAN"    "24RTP Officer Letter"
+  2229   "2 "   "Closed"    150.0     50.0   "ELLIS"		115	"O_ELLIS"      "24RTP Officer Letter"		// Not in Oncor's List
+  2800   "3 "   "Closed"    6.0        2.0   "DALLAS"		114	"O_DALLAS"     "24RTP Officer Letter"		// Not in Oncor's List
+  2801   "4 "   "Closed"    6.0        2.0   "DALLAS"		114	"O_DALLAS"     "24RTP Officer Letter"		// Not in Oncor's List
+  2317   "3 "   "Closed"    100.0     33.3   "ELLIS"		115	"O_ELLIS"      "24RTP Officer Letter"		// Not in Oncor's List
+  3083   "1 "   "Closed"    2011.0  670.33   "DALLAS"		114	"O_DALLAS"     "24RTP Officer Letter"		// Found only 150 MW in Oncor's List
+  2431   "1 "   "Closed"    540.0    180.0   "DALLAS"		114	"O_DALLAS"     "24RTP Officer Letter"		// Not in Oncor's List
+}
+
+Load (BusNum,LoadID,LoadStatus,GenAGCAble,LoadSMW,LoadSMVR,LoadIMW,LoadIMVR,LoadZMW,
+   LoadZMVR,DistStatus,DistMWInput,DistMvarInput,Interruptible,GenMWMax,GenMWMin,
+   DistMWMax,DistMWMin,GenUnitType:1,LoadModelGroup,AreaNum,ZoneNum,BANumber,
+   OwnerNum,EMSType,EMSDeviceID,DataMaintainerAssign,DataMaintainerInherit,
+   AllLabels,CustomInteger,CustomString,CustomString:1,CustomString:3)
+{
+  3065 "4 " "Closed" "YES"  187.50000   62.50000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "  187.50000    0.00000    0.00000    0.00000 "UN" ""      1    114      1    794 "" "" "" "YES" "" 114 "O_DALLAS" "DALLAS" "24RTP Officer Letter"		// Not in Oncor's List
+  2427 "1 " "Closed" "YES" 1277.99997  426.00002    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO " 1277.99997    0.00000    0.00000    0.00000 "UN" ""      1    114      1    794 "" "" "" "YES" "" 114 "O_DALLAS" "DALLAS" "24RTP Officer Letter"		// Not in Oncor's List
+  2427 "2 " "Closed" "YES"  500.00000  166.67000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "  500.00000    0.00000    0.00000    0.00000 "UN" ""      1    114      1    794 "" "" "" "YES" "" 114 "O_DALLAS" "DALLAS" "24RTP Officer Letter"		// Not in Oncor's List
+  2814 "3 " "Closed" "YES"   50.00000   16.67000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "   50.00000    0.00000    0.00000    0.00000 "UN" ""      1    114      1    794 "" "" "" "YES" "" 114 "O_DALLAS" "DALLAS" "24RTP Officer Letter"		// Not in Oncor's List
+ 12491 "1 " "Closed" "YES"  135.00000   45.00000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "  135.00000    0.00000    0.00000    0.00000 "UN" ""      1    114      1    794 "" "" "" "YES" "" 114 "O_DALLAS" "DALLAS" "24RTP Officer Letter"		// Not in Oncor's List
+  2429 "1 " "Closed" "YES"  135.00000   45.00000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "  135.00000    0.00000    0.00000    0.00000 "UN" ""      1    114      1    794 "" "" "" "YES" "" 114 "O_DALLAS" "DALLAS" "24RTP Officer Letter"		// Not in Oncor's List
+  2568 "3 " "Closed" "YES"   20.00000    6.67000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "   20.00000    0.00000    0.00000    0.00000 "UN" ""      1    152      1    794 "" "" "" "YES" "" 152 "O_DENTON" "COLLIN" "24RTP Officer Letter"		// Not in Oncor's List
+  2570 "4 " "Closed" "YES"   20.00000    6.67000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "   20.00000    0.00000    0.00000    0.00000 "UN" ""      1    152      1    794 "" "" "" "YES" "" 152 "O_DENTON" "COLLIN" "24RTP Officer Letter"		// Not in Oncor's List
+}
+
+Load (BusNum,LoadID,LoadStatus,GenAGCAble,LoadSMW,LoadSMVR,LoadIMW,LoadIMVR,LoadZMW,
+   LoadZMVR,DistStatus,DistMWInput,DistMvarInput,Interruptible,GenMWMax,GenMWMin,
+   DistMWMax,DistMWMin,GenUnitType:1,LoadModelGroup,AreaNum,ZoneNum,BANumber,
+   OwnerNum,EMSType,EMSDeviceID,DataMaintainerAssign,DataMaintainerInherit,
+   AllLabels,CustomInteger,CustomString,CustomString:1,CustomString:3)
+{
+150211 "O7" "Closed" "YES"  194.00001   48.62100    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "  194.00001    0.00000    0.00000    0.00000 "UN" ""    901      4    901    705 "" "" "" "YES" "" 1078 "E_SHACKELFOR" "SHACKELFORD" "24RTP Officer Letter"
+}
+
+
+//////////////////////////////////////////////////////////////////////
+//The following loads are from TSR submissions WITH topology changes//
+//////////////////////////////////////////////////////////////////////
+
+
+//TSR 2001
+SCRIPT
+{
+UnSelectAll(Branch);
+SetData(Branch, [ObjectID, Selected], ["Branch 1424 1446 2", YES]);
+Delete(Branch, SELECTED);
+}
+
+Bus (Number,Name,NomkV,Slack,NomB,NomG,DCLossMultiplier,AreaNumber,ZoneNumber,
+   BANumber,OwnerNumber,SubNumber,Monitor,LimitSet,UseSpecificLimits,LimitLowA,
+   LimitLowB,LimitLowC,LimitLowD,LimitHighA,LimitHighB,LimitHighC,LimitHighD,
+   Latitude,Longitude,TopologyBusType,Priority,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,DataMaintainerInheritBlock,
+   AllLabels,CustomInteger:0,CustomString:0,CustomString:1)
+{
+ 15205 "MAHLER1_8"    138.0000 "NO "    0.00000    0.00000 1.000000      1      3      1    794 "" "YES" "Default" "NO " "" "" "" "" "" "" "" "" "" "" "BusbarSection" 0 "" "" "" "YES" "NO " "" "" "" ""
+}
+Load (BusNum,ID,Status,AGC,SMW,SMvar,IMW,IMvar,ZMW,ZMvar,DistStatus,DistMWInput,
+   DistMvarInput,Interruptible,MWMax,MWMin,DistMWMax,DistMWMin,DistUnitTypeCode,
+   LoadModelGroup,AreaNumber,ZoneNumber,BANumber,OwnerNumber,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,AllLabels,CustomInteger:0,
+   CustomString:0,CustomString:1,CustomString:3)
+{
+ 15205 "1 " "Closed" "YES"   70.00000   23.30000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "   70.00000    0.00000    0.00000    0.00000 "UN" ""      1    158      1    794 "" "" "" "YES" "" "" "" "ARCHER" "24RTP Officer Letter"
+}
+Branch (BusNumFrom,BusNumTo,Circuit,BranchDeviceType,ConsolidateAllow,
+   OpenOrCloseBreakersAllow,Status,StatusNormal,ByPass,MeteredBus,R,X,B,G,
+   LineLength,Monitor,LimitSet,LimitMVAA,LimitMVAB,LimitMVAC,LimitMVAD,LimitMVAE,
+   LimitMVAF,LimitMVAG,LimitMVAH,LimitMVAI,LimitMVAJ,LimitMVAK,LimitMVAL,
+   LimitMVAM,LimitMVAN,LimitMVAO,OwnerNum1,OwnerPerc1,OwnerNum2,OwnerPerc2,
+   OwnerNum3,OwnerPerc3,OwnerNum4,OwnerPerc4,OwnerNum5,OwnerPerc5,OwnerNum6,
+   OwnerPerc6,OwnerNum7,OwnerPerc7,OwnerNum8,OwnerPerc8,EMSType,EMSID,EMSLineID,
+   EMSCBTyp,EMSID2From,EMSID2To,DataMaintainerAssign,DataMaintainerInherit,
+   AllLabels,CustomFloat:0,CustomFloat:1)
+{
+  1424  15205 "2 " "Line"        "" "" "Closed" "Closed" "NO"  "1424"    0.000339  0.001922  0.000550  0.000000    0.50000 "YES" "Default"  390.0  390.0  425.0  394.0 4413.2    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  1446  15205 "2 " "Line"        "" "" "Closed" "Closed" "NO"  "15205"   0.003461  0.019628  0.005650  0.000000    5.10000 "YES" "Default"  390.0  390.0  425.0  394.0 4413.2    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+}
+
+
+//TSR 2344
+SCRIPT
+{
+UnSelectAll(Branch);
+SetData(Branch, [ObjectID, Selected], ["Branch 1699 12677 1", YES]);
+Delete(Branch, SELECTED);
+}
+Owner (Number,Name,DataMaintainerAssign)
+{
+     148 "148" ""
+}
+Bus (Number,Name,NomkV,Slack,NomB,NomG,DCLossMultiplier,AreaNumber,ZoneNumber,
+   BANumber,OwnerNumber,SubNumber,Monitor,LimitSet,UseSpecificLimits,LimitLowA,
+   LimitLowB,LimitLowC,LimitLowD,LimitHighA,LimitHighB,LimitHighC,LimitHighD,
+   Latitude,Longitude,TopologyBusType,Priority,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,DataMaintainerInheritBlock,
+   AllLabels,CustomInteger:0,CustomString:0,CustomString:1)
+{
+ 12679 "NORTHGATE_8"  138.0000 "NO "    0.00000    0.00000 1.000000      1      1      1    148 "" "YES" "Default" "NO " "" "" "" "" "" "" "" "" "" "" "BusbarSection" 0 "" "" "" "YES" "NO " "" "" "" ""
+}
+Load (BusNum,ID,Status,AGC,SMW,SMvar,IMW,IMvar,ZMW,ZMvar,DistStatus,DistMWInput,
+   DistMvarInput,Interruptible,MWMax,MWMin,DistMWMax,DistMWMin,DistUnitTypeCode,
+   LoadModelGroup,AreaNumber,ZoneNumber,BANumber,OwnerNumber,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,AllLabels,CustomInteger:0,
+   CustomString:0,CustomString:1,CustomString:3)
+{
+ 12679 "1 " "Closed" "YES"   48.00000    16.0000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "   22.00000    0.00000    0.00000    0.00000 "UN" ""      1      1      1    148 "" "" "" "YES" "" "" "" "GRAYSON" "24 RTP Officer Letter"
+}
+Branch (BusNumFrom,BusNumTo,Circuit,BranchDeviceType,ConsolidateAllow,
+   OpenOrCloseBreakersAllow,Status,StatusNormal,ByPass,MeteredBus,R,X,B,G,
+   LineLength,Monitor,LimitSet,LimitMVAA,LimitMVAB,LimitMVAC,LimitMVAD,LimitMVAE,
+   LimitMVAF,LimitMVAG,LimitMVAH,LimitMVAI,LimitMVAJ,LimitMVAK,LimitMVAL,
+   LimitMVAM,LimitMVAN,LimitMVAO,OwnerNum1,OwnerPerc1,OwnerNum2,OwnerPerc2,
+   OwnerNum3,OwnerPerc3,OwnerNum4,OwnerPerc4,OwnerNum5,OwnerPerc5,OwnerNum6,
+   OwnerPerc6,OwnerNum7,OwnerPerc7,OwnerNum8,OwnerPerc8,EMSType,EMSID,EMSLineID,
+   EMSCBTyp,EMSID2From,EMSID2To,DataMaintainerAssign,DataMaintainerInherit,
+   AllLabels,CustomFloat:0,CustomFloat:1)
+{
+  1699  12679 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "1699"    0.003977  0.036955  0.014530  0.000000   14.00000 "YES" "Default"  313.6  313.6  353.3  326.0 88888.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+ 12677  12679 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "12677"   0.000653  0.006071  0.002390  0.000000    2.30000 "YES" "Default"  326.0  326.0  326.0  326.0 88888.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+}
+
+
+//TSR 2396
+SCRIPT
+{
+UnSelectAll(Branch);
+SetData(Branch, [ObjectID, Selected], ["Branch 3446 3544 1", YES]);
+Delete(Branch, SELECTED);
+}
+
+Bus (Number,Name,NomkV,Slack,NomB,NomG,DCLossMultiplier,AreaNumber,ZoneNumber,
+   BANumber,OwnerNumber,SubNumber,Monitor,LimitSet,UseSpecificLimits,LimitLowA,
+   LimitLowB,LimitLowC,LimitLowD,LimitHighA,LimitHighB,LimitHighC,LimitHighD,
+   Latitude,Longitude,TopologyBusType,Priority,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,DataMaintainerInheritBlock,
+   AllLabels,CustomInteger:0,CustomString:0,CustomString:1)
+{
+  3474 "CENTRLPRK_8"  138.0000 "NO "    0.00000    0.00000 1.000000      1      4      1    794 "" "YES" "Default" "YES" 0.950000 0.900000 0.900000 0.900000 1.050000 1.050000 1.100000 1.100000 "" "" "BusbarSection" 0 "" "" "" "YES" "NO " "" "" "" ""
+}
+Load (BusNum,ID,Status,AGC,SMW,SMvar,IMW,IMvar,ZMW,ZMvar,DistStatus,DistMWInput,
+   DistMvarInput,Interruptible,MWMax,MWMin,DistMWMax,DistMWMin,DistUnitTypeCode,
+   LoadModelGroup,AreaNumber,ZoneNumber,BANumber,OwnerNumber,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,AllLabels,CustomInteger:0,
+   CustomString:0,CustomString:1,CustomString:3)
+{
+  3474 "1 " "Closed" "YES"   45.00000   14.79000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "   45.00000    0.00000    0.00000    0.00000 "UN" ""      1      4      1    794 "" "" "" "YES" "" "" "" "MCLENNAN" "24RTP Officer Letter"
+}
+Branch (BusNumFrom,BusNumTo,Circuit,BranchDeviceType,ConsolidateAllow,
+   OpenOrCloseBreakersAllow,Status,StatusNormal,ByPass,MeteredBus,R,X,B,G,
+   LineLength,Monitor,LimitSet,LimitMVAA,LimitMVAB,LimitMVAC,LimitMVAD,LimitMVAE,
+   LimitMVAF,LimitMVAG,LimitMVAH,LimitMVAI,LimitMVAJ,LimitMVAK,LimitMVAL,
+   LimitMVAM,LimitMVAN,LimitMVAO,OwnerNum1,OwnerPerc1,OwnerNum2,OwnerPerc2,
+   OwnerNum3,OwnerPerc3,OwnerNum4,OwnerPerc4,OwnerNum5,OwnerPerc5,OwnerNum6,
+   OwnerPerc6,OwnerNum7,OwnerPerc7,OwnerNum8,OwnerPerc8,EMSType,EMSID,EMSLineID,
+   EMSCBTyp,EMSID2From,EMSID2To,DataMaintainerAssign,DataMaintainerInherit,
+   AllLabels,CustomFloat:0,CustomFloat:1)
+{
+  3446   3474 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "3446"    0.002244  0.012206  0.003840  0.000000    3.30000 "YES" "Default"  214.0  214.0  214.0  214.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  3474   3544 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "3474"    0.001258  0.006843  0.002150  0.000000    1.85000 "YES" "Default"  214.0  214.0  214.0  214.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+}
+
+
+//TSR 2463
+SCRIPT
+{
+UnSelectAll(Branch);
+SetData(Branch, [ObjectID, Selected], ["Branch 1871 15100 1", YES]);
+SetData(Branch, [ObjectID, Selected], ["Branch 1872 15101 1", YES]);
+Delete(Branch, SELECTED);
+}
+
+Bus (BusNum,BusName,BusNomVolt,BusSlack,BusB:1,BusG:1,DCLossMultiplier,AreaNum,
+   ZoneNum,BANumber,OwnerNum,SubNum,BusMonEle,LSName,BusVoltLim,BusVoltLimLow:1,
+   BusVoltLimLow:2,BusVoltLimLow:3,BusVoltLimLow:4,BusVoltLimHigh:1,
+   BusVoltLimHigh:2,BusVoltLimHigh:3,BusVoltLimHigh:4,Latitude,Longitude,
+   TopologyBusType,Priority,EMSType,EMSDeviceID,DataMaintainerAssign,
+   DataMaintainerInherit,DataMaintainerInheritBlock,AllLabels,CustomInteger,
+   CustomString,CustomString:1)
+{
+ 15102 "CADE_BRN1_8"  138.0000 "NO "    0.00000    0.00000 1.000000      1      4      1    794 "" "YES" "Default" "NO " "" "" "" "" "" "" "" "" "" "" "BusbarSection" 0 "" "" "" "YES" "NO " "" "" "" "DENTON"
+ 15103 "CADE_BRN2_8"  138.0000 "NO "    0.00000    0.00000 1.000000      1      4      1    794 "" "YES" "Default" "NO " "" "" "" "" "" "" "" "" "" "" "BusbarSection" 0 "" "" "" "YES" "NO " "" "" "" "DENTON"
+}
+Load (BusNum,LoadID,LoadStatus,GenAGCAble,LoadSMW,LoadSMVR,LoadIMW,LoadIMVR,LoadZMW,
+   LoadZMVR,DistStatus,DistMWInput,DistMvarInput,Interruptible,GenMWMax,GenMWMin,
+   DistMWMax,DistMWMin,GenUnitType:1,LoadModelGroup,AreaNum,ZoneNum,BANumber,
+   OwnerNum,EMSType,EMSDeviceID,DataMaintainerAssign,DataMaintainerInherit,
+   AllLabels,CustomInteger,CustomString,CustomString:1,CustomString:3)
+{
+ 15102 "1 " "Closed" "YES"   84.50000   28.16000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "   84.50000    0.00000    0.00000    0.00000 "UN" ""      1    152      1    794 "" "" "" "YES" "" "" "" "DENTON" "24RTP Officer Letter"
+ 15103 "1 " "Closed" "YES"   84.50000   28.16000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "   84.50000    0.00000    0.00000    0.00000 "UN" ""      1    152      1    794 "" "" "" "YES" "" "" "" "DENTON" "24RTP Officer Letter"
+}
+Branch (BusNum,BusNum:1,LineCircuit,BranchDeviceType,ConsolidateBranch,
+   OpenOrCloseBreakersAllow,LineStatus,NormLineStatus,SeriesCapStatus,
+   LineMeter:1,LineR,LineX,LineC,LineG,LineLength,LineMonEle,LSName,LineAMVA,
+   LineAMVA:1,LineAMVA:2,LineAMVA:3,LineAMVA:4,LineAMVA:5,LineAMVA:6,LineAMVA:7,
+   LineAMVA:8,LineAMVA:9,LineAMVA:10,LineAMVA:11,LineAMVA:12,LineAMVA:13,
+   LineAMVA:14,OwnerNum,OwnPercent,OwnerNum:1,OwnPercent:1,OwnerNum:2,
+   OwnPercent:2,OwnerNum:3,OwnPercent:3,OwnerNum:4,OwnPercent:4,OwnerNum:5,
+   OwnPercent:5,OwnerNum:6,OwnPercent:6,OwnerNum:7,OwnPercent:7,EMSType,
+   EMSDeviceID,EMSDeviceID:1,EMSType:1,EMSDeviceID:2,EMSDeviceID:3,
+   DataMaintainerAssign,DataMaintainerInherit,AllLabels,CustomFloat,
+   CustomFloat:1)
+{
+  1871  15102 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "1871"    0.000130  0.001150  0.000730  0.000000    0.35000 "YES" "Default"  482.0  482.0  524.0  502.0  753.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  1872  15103 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "15103"   0.000130  0.001150  0.000730  0.000000    0.35000 "YES" "Default"  482.0  482.0  524.0  502.0  753.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+ 15100  15102 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "15102"   0.000130  0.001150  0.000730  0.000000    0.35000 "YES" "Default"  482.0  482.0  524.0  502.0  753.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+ 15101  15103 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "15101"   0.000130  0.001150  0.000730  0.000000    0.35000 "YES" "Default"  482.0  482.0  524.0  502.0  753.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+}
+
+
+//TSR 2549
+SCRIPT
+{
+UnSelectAll(Branch);
+SetData(Branch, [ObjectID, Selected], ["Branch 1860 2082 1", YES]);
+SetData(Branch, [ObjectID, Selected], ["Branch 2082 12065 1", YES]);
+Delete(Branch, SELECTED);
+}
+
+Bus (Number,Name,NomkV,Slack,NomB,NomG,DCLossMultiplier,AreaNumber,ZoneNumber,
+   BANumber,OwnerNumber,SubNumber,Monitor,LimitSet,UseSpecificLimits,LimitLowA,
+   LimitLowB,LimitLowC,LimitLowD,LimitHighA,LimitHighB,LimitHighC,LimitHighD,
+   Latitude,Longitude,TopologyBusType,Priority,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,DataMaintainerInheritBlock,
+   AllLabels,CustomInteger:0,CustomString:0,CustomString:1)
+{
+ 15104 "CYR_FRTWR1_8" 138.0000 "NO "    0.00000    0.00000 1.000000      1      4      1    794 "" "YES" "Default" "NO " "" "" "" "" "" "" "" "" "" "" "BusbarSection" 0 "" "" "" "YES" "NO " "" "" "" ""
+ 15105 "CYR_FRTWR2_8" 138.0000 "NO "    0.00000    0.00000 1.000000      1      4      1    794 "" "YES" "Default" "NO " "" "" "" "" "" "" "" "" "" "" "BusbarSection" 0 "" "" "" "YES" "NO " "" "" "" ""
+}
+Load (BusNum,ID,Status,AGC,SMW,SMvar,IMW,IMvar,ZMW,ZMvar,DistStatus,DistMWInput,
+   DistMvarInput,Interruptible,MWMax,MWMin,DistMWMax,DistMWMin,DistUnitTypeCode,
+   LoadModelGroup,AreaNumber,ZoneNumber,BANumber,OwnerNumber,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,AllLabels,CustomInteger:0,
+   CustomString:0,CustomString:1,CustomString:3)
+{
+ 15104 "1 " "Closed" "YES"   75.00000   25.00000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "   75.00000    0.00000    0.00000    0.00000 "UN" ""      1      4      1    794 "" "" "" "YES" "" "" "" "TARRANT" "24RTP Officer Letter"		// Not in Oncor's List
+ 15105 "1 " "Closed" "YES"   75.00000   25.00000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "   75.00000    0.00000    0.00000    0.00000 "UN" ""      1      4      1    794 "" "" "" "YES" "" "" "" "TARRANT" "24RTP Officer Letter"		// Not in Oncor's List
+}
+Branch (BusNumFrom,BusNumTo,Circuit,BranchDeviceType,ConsolidateAllow,
+   OpenOrCloseBreakersAllow,Status,StatusNormal,ByPass,MeteredBus,R,X,B,G,
+   LineLength,Monitor,LimitSet,LimitMVAA,LimitMVAB,LimitMVAC,LimitMVAD,LimitMVAE,
+   LimitMVAF,LimitMVAG,LimitMVAH,LimitMVAI,LimitMVAJ,LimitMVAK,LimitMVAL,
+   LimitMVAM,LimitMVAN,LimitMVAO,OwnerNum1,OwnerPerc1,OwnerNum2,OwnerPerc2,
+   OwnerNum3,OwnerPerc3,OwnerNum4,OwnerPerc4,OwnerNum5,OwnerPerc5,OwnerNum6,
+   OwnerPerc6,OwnerNum7,OwnerPerc7,OwnerNum8,OwnerPerc8,EMSType,EMSID,EMSLineID,
+   EMSCBTyp,EMSID2From,EMSID2To,DataMaintainerAssign,DataMaintainerInherit,
+   AllLabels,CustomFloat:0,CustomFloat:1)
+{
+  1860  15104 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "1860"    0.003517  0.019963  0.005750  0.000000    5.19000 "YES" "Default"  394.0  394.0  430.0  394.0 4039.6    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  2082  15104 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "15104"   0.000348  0.001974  0.000570  0.000000    0.51000 "YES" "Default"  394.0  394.0  430.0  394.0 4039.6    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  2082  15105 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "15105"   0.000339  0.001926  0.000550  0.000000    0.50000 "YES" "Default"  394.0  394.0  430.0  394.0 2741.3    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+ 12065  15105 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "12065"   0.003119  0.017702  0.005100  0.000000    4.60000 "YES" "Default"  394.0  394.0  430.0  394.0 2741.3    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+}
+
+
+//TSR 2565
+Bus (BusNum,BusName,BusNomVolt,BusSlack,BusB:1,BusG:1,DCLossMultiplier,AreaNum,
+   ZoneNum,BANumber,OwnerNum,SubNum,BusMonEle,LSName,BusVoltLim,BusVoltLimLow:1,
+   BusVoltLimLow:2,BusVoltLimLow:3,BusVoltLimLow:4,BusVoltLimHigh:1,
+   BusVoltLimHigh:2,BusVoltLimHigh:3,BusVoltLimHigh:4,Latitude,Longitude,
+   TopologyBusType,Priority,EMSType,EMSDeviceID,DataMaintainerAssign,
+   DataMaintainerInherit,DataMaintainerInheritBlock,AllLabels,CustomInteger,
+   CustomString,CustomString:1)
+{
+  2600 "HIDDENCK_8"   138.0000 "NO "    0.00000    0.00000 1.000000      1      4      1    794 "" "YES" "Default" "NO " "" "" "" "" "" "" "" "" "" "" "BusbarSection" 0 "" "" "" "YES" "NO " "" "" "" "DALLAS"
+}
+Load (BusNum,LoadID,LoadStatus,GenAGCAble,LoadSMW,LoadSMVR,LoadIMW,LoadIMVR,LoadZMW,
+   LoadZMVR,DistStatus,DistMWInput,DistMvarInput,Interruptible,GenMWMax,GenMWMin,
+   DistMWMax,DistMWMin,GenUnitType:1,LoadModelGroup,AreaNum,ZoneNum,BANumber,
+   OwnerNum,EMSType,EMSDeviceID,DataMaintainerAssign,DataMaintainerInherit,
+   AllLabels,CustomInteger,CustomString,CustomString:1,CustomString:3)
+{
+  2600 "1 " "Closed" "YES"  380.00000  126.60000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "  380.00000    0.00000    0.00000    0.00000 "UN" ""      1      4      1    794 "" "" "" "YES" "" "" "" "DALLAS" "24RTP Officer Letter"		// Not in Oncor's List
+}
+Branch (BusNum,BusNum:1,LineCircuit,BranchDeviceType,ConsolidateBranch,
+   OpenOrCloseBreakersAllow,LineStatus,NormLineStatus,SeriesCapStatus,
+   LineMeter:1,LineR,LineX,LineC,LineG,LineLength,LineMonEle,LSName,LineAMVA,
+   LineAMVA:1,LineAMVA:2,LineAMVA:3,LineAMVA:4,LineAMVA:5,LineAMVA:6,LineAMVA:7,
+   LineAMVA:8,LineAMVA:9,LineAMVA:10,LineAMVA:11,LineAMVA:12,LineAMVA:13,
+   LineAMVA:14,OwnerNum,OwnPercent,OwnerNum:1,OwnPercent:1,OwnerNum:2,
+   OwnPercent:2,OwnerNum:3,OwnPercent:3,OwnerNum:4,OwnPercent:4,OwnerNum:5,
+   OwnPercent:5,OwnerNum:6,OwnPercent:6,OwnerNum:7,OwnPercent:7,EMSType,
+   EMSDeviceID,EMSDeviceID:1,EMSType:1,EMSDeviceID:2,EMSDeviceID:3,
+   DataMaintainerAssign,DataMaintainerInherit,AllLabels,CustomFloat,
+   CustomFloat:1)
+{
+  2429   2600 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "2429"    0.000795  0.007356  0.003970  0.000000    2.60000 "YES" "Default"  794.0  794.0  794.0  794.0 88888.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  2429   2600 "2 " "Line"        "" "" "Closed" "Closed" "NO"  "2600"    0.000795  0.007356  0.003970  0.000000    2.60000 "YES" "Default"  794.0  794.0  794.0  794.0 88888.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+}
+
+
+//TSR 2572
+SCRIPT
+{
+UnSelectAll(Branch);
+SetData(Branch, [ObjectID, Selected], ["Branch 968 2593 1", YES]);
+Delete(Branch, SELECTED);
+}
+
+Bus (BusNum,BusName,BusNomVolt,BusSlack,BusB:1,BusG:1,DCLossMultiplier,AreaNum,
+   ZoneNum,BANumber,OwnerNum,SubNum,BusMonEle,LSName,BusVoltLim,BusVoltLimLow:1,
+   BusVoltLimLow:2,BusVoltLimLow:3,BusVoltLimLow:4,BusVoltLimHigh:1,
+   BusVoltLimHigh:2,BusVoltLimHigh:3,BusVoltLimHigh:4,Latitude,Longitude,
+   TopologyBusType,Priority,EMSType,EMSDeviceID,DataMaintainerAssign,
+   DataMaintainerInherit,DataMaintainerInheritBlock,AllLabels,CustomInteger,
+   CustomString,CustomString:1)
+{
+  2497 "GOBLN_8"      138.0000 "NO "    0.00000    0.00000 1.000000      1      4      1    794 "" "YES" "Default" "NO " "" "" "" "" "" "" "" "" "" "" "BusbarSection" 0 "" "" "" "YES" "NO " "" "" "" "DALLAS"
+}
+Load (BusNum,LoadID,LoadStatus,GenAGCAble,LoadSMW,LoadSMVR,LoadIMW,LoadIMVR,LoadZMW,
+   LoadZMVR,DistStatus,DistMWInput,DistMvarInput,Interruptible,GenMWMax,GenMWMin,
+   DistMWMax,DistMWMin,GenUnitType:1,LoadModelGroup,AreaNum,ZoneNum,BANumber,
+   OwnerNum,EMSType,EMSDeviceID,DataMaintainerAssign,DataMaintainerInherit,
+   AllLabels,CustomInteger,CustomString,CustomString:1,CustomString:3)
+{
+  2497 "1 " "Closed" "YES"  108.00000   36.00000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "  108.00000    0.00000    0.00000    0.00000 "UN" ""      1      4      1    794 "" "" "" "YES" "" "" "" "DALLAS" "24RTP Officer Letter"		// Not in Oncor's List
+}
+Branch (BusNum,BusNum:1,LineCircuit,BranchDeviceType,ConsolidateBranch,
+   OpenOrCloseBreakersAllow,LineStatus,NormLineStatus,SeriesCapStatus,
+   LineMeter:1,LineR,LineX,LineC,LineG,LineLength,LineMonEle,LSName,LineAMVA,
+   LineAMVA:1,LineAMVA:2,LineAMVA:3,LineAMVA:4,LineAMVA:5,LineAMVA:6,LineAMVA:7,
+   LineAMVA:8,LineAMVA:9,LineAMVA:10,LineAMVA:11,LineAMVA:12,LineAMVA:13,
+   LineAMVA:14,OwnerNum,OwnPercent,OwnerNum:1,OwnPercent:1,OwnerNum:2,
+   OwnPercent:2,OwnerNum:3,OwnPercent:3,OwnerNum:4,OwnPercent:4,OwnerNum:5,
+   OwnPercent:5,OwnerNum:6,OwnPercent:6,OwnerNum:7,OwnPercent:7,EMSType,
+   EMSDeviceID,EMSDeviceID:1,EMSType:1,EMSDeviceID:2,EMSDeviceID:3,
+   DataMaintainerAssign,DataMaintainerInherit,AllLabels,CustomFloat,
+   CustomFloat:1)
+{
+   968   2497 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "2497"    0.002187  0.016937  0.005290  0.000000    3.52000 "YES" "Default"  326.0  326.0  368.0  326.0 1235.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  2497   2593 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "2593"    0.000853  0.006605  0.002070  0.000000    1.37000 "YES" "Default"  326.0  326.0  368.0  326.0 1235.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+}
+
+
+//TSR 2576
+SCRIPT
+{
+UnSelectAll(Branch);
+SetData(Branch, [ObjectID, Selected], ["Branch 442 1905 1", YES]);
+Delete(Branch, SELECTED);
+}
+
+Bus (Number,Name,NomkV,Slack,NomB,NomG,DCLossMultiplier,AreaNumber,ZoneNumber,
+   BANumber,OwnerNumber,SubNumber,Monitor,LimitSet,UseSpecificLimits,LimitLowA,
+   LimitLowB,LimitLowC,LimitLowD,LimitHighA,LimitHighB,LimitHighC,LimitHighD,
+   Latitude,Longitude,TopologyBusType,Priority,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,DataMaintainerInheritBlock,
+   AllLabels,CustomInteger:0,CustomString:0,CustomString:1)
+{
+  1303 "FORBESRD_8"   138.0000 "NO "    0.00000    0.00000 1.000000     11      4     11    115 "" "YES" "Default" "NO " "" "" "" "" "" "" "" "" "" "" "BusbarSection" 0 "" "" "" "YES" "NO " "" "" "" ""
+}
+Load (BusNum,ID,Status,AGC,SMW,SMvar,IMW,IMvar,ZMW,ZMvar,DistStatus,DistMWInput,
+   DistMvarInput,Interruptible,MWMax,MWMin,DistMWMax,DistMWMin,DistUnitTypeCode,
+   LoadModelGroup,AreaNumber,ZoneNumber,BANumber,OwnerNumber,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,AllLabels,CustomInteger:0,
+   CustomString:0,CustomString:1,CustomString:3)
+{
+  1303 "1 " "Closed" "YES"  335.99999  112.00000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "  335.99999    0.00000    0.00000    0.00000 "UN" ""     11     32     11    115 "" "" "" "YES" "" "" "" "JOHNSON" "24RTP Officer Letter"
+}
+Branch (BusNumFrom,BusNumTo,Circuit,BranchDeviceType,ConsolidateAllow,
+   OpenOrCloseBreakersAllow,Status,StatusNormal,ByPass,MeteredBus,R,X,B,G,
+   LineLength,Monitor,LimitSet,LimitMVAA,LimitMVAB,LimitMVAC,LimitMVAD,LimitMVAE,
+   LimitMVAF,LimitMVAG,LimitMVAH,LimitMVAI,LimitMVAJ,LimitMVAK,LimitMVAL,
+   LimitMVAM,LimitMVAN,LimitMVAO,OwnerNum1,OwnerPerc1,OwnerNum2,OwnerPerc2,
+   OwnerNum3,OwnerPerc3,OwnerNum4,OwnerPerc4,OwnerNum5,OwnerPerc5,OwnerNum6,
+   OwnerPerc6,OwnerNum7,OwnerPerc7,OwnerNum8,OwnerPerc8,EMSType,EMSID,EMSLineID,
+   EMSCBTyp,EMSID2From,EMSID2To,DataMaintainerAssign,DataMaintainerInherit,
+   AllLabels,CustomFloat:0,CustomFloat:1)
+{
+   442   1303 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "442"     0.000700  0.003975  0.001140  0.000000    1.03000 "YES" "Default"  206.0  206.0  220.0  214.0 88888.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  1303   1905 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "1303"    0.001680  0.009545  0.002750  0.000000    2.47000 "YES" "Default"  206.0  206.0  220.0  214.0 88888.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+}
+
+
+//TSR 2630
+SCRIPT
+{
+UnSelectAll(Branch);
+SetData(Branch, [ObjectID, Selected], ["Branch 802 825 1", YES]);
+Delete(Branch, SELECTED);
+}
+
+Bus (Number,Name,NomkV,Slack,NomB,NomG,DCLossMultiplier,AreaNumber,ZoneNumber,
+   BANumber,OwnerNumber,SubNumber,Monitor,LimitSet,UseSpecificLimits,LimitLowA,
+   LimitLowB,LimitLowC,LimitLowD,LimitHighA,LimitHighB,LimitHighC,LimitHighD,
+   Latitude,Longitude,TopologyBusType,Priority,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,DataMaintainerInheritBlock,
+   AllLabels,CustomInteger:0,CustomString:0,CustomString:1)
+{
+  2165 "HOLFORD_8"    138.0000 "NO "    0.00000    0.00000 1.000000     20      4     20    229 "" "YES" "Default" "NO " "" "" "" "" "" "" "" "" "" "" "BusbarSection" 0 "" "" "" "YES" "NO " "" "" "" ""
+}
+Load (BusNum,ID,Status,AGC,SMW,SMvar,IMW,IMvar,ZMW,ZMvar,DistStatus,DistMWInput,
+   DistMvarInput,Interruptible,MWMax,MWMin,DistMWMax,DistMWMin,DistUnitTypeCode,
+   LoadModelGroup,AreaNumber,ZoneNumber,BANumber,OwnerNumber,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,AllLabels,CustomInteger:0,
+   CustomString:0,CustomString:1,CustomString:3)
+{
+  2165 "1 " "Closed" "YES"  216.00001   72.00000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "  216.00001    0.00000    0.00000    0.00000 "UN" ""      1    114     20    794 "" "" "" "YES" "" "" "" "DALLAS" "24RTP Officer Letter"		// Not in Oncor's List
+}
+Branch (BusNumFrom,BusNumTo,Circuit,BranchDeviceType,ConsolidateAllow,
+   OpenOrCloseBreakersAllow,Status,StatusNormal,ByPass,MeteredBus,R,X,B,G,
+   LineLength,Monitor,LimitSet,LimitMVAA,LimitMVAB,LimitMVAC,LimitMVAD,LimitMVAE,
+   LimitMVAF,LimitMVAG,LimitMVAH,LimitMVAI,LimitMVAJ,LimitMVAK,LimitMVAL,
+   LimitMVAM,LimitMVAN,LimitMVAO,OwnerNum1,OwnerPerc1,OwnerNum2,OwnerPerc2,
+   OwnerNum3,OwnerPerc3,OwnerNum4,OwnerPerc4,OwnerNum5,OwnerPerc5,OwnerNum6,
+   OwnerPerc6,OwnerNum7,OwnerPerc7,OwnerNum8,OwnerPerc8,EMSType,EMSID,EMSLineID,
+   EMSCBTyp,EMSID2From,EMSID2To,DataMaintainerAssign,DataMaintainerInherit,
+   AllLabels,CustomFloat:0,CustomFloat:1)
+{
+   802   2165 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "802"     0.000647  0.007643  0.000940  0.000000    1.30000 "YES" "Default"  386.0  417.0  417.0  417.0 88888.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   229 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+   825   2165 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "2165"    0.002363  0.027927  0.003440  0.000000    4.75000 "YES" "Default"  386.0  417.0  417.0  417.0 88888.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   229 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+}
+StudyMWTransactions (NumberExport,NumberImport,ID,MW,Enabled,DataMaintainerAssign)
+{
+       1       20 "RAW_LOAD"  -216.00 "YES" ""
+}
+
+
+//TSR 2641
+SCRIPT
+{
+UnSelectAll(Branch);
+SetData(Branch, [ObjectID, Selected], ["Branch 217 2317 1", YES]);
+Delete(Branch, SELECTED);
+}
+
+Bus (Number,Name,NomkV,Slack,NomB,NomG,DCLossMultiplier,AreaNumber,ZoneNumber,
+   BANumber,OwnerNumber,SubNumber,Monitor,LimitSet,UseSpecificLimits,LimitLowA,
+   LimitLowB,LimitLowC,LimitLowD,LimitHighA,LimitHighB,LimitHighC,LimitHighD,
+   Latitude,Longitude,TopologyBusType,Priority,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,DataMaintainerInheritBlock,
+   AllLabels,CustomInteger:0,CustomString:0,CustomString:1)
+{
+  2237 "STERTRD_8"    138.0000 "NO "    0.00000    0.00000 1.000000      1      4      1    794 "" "YES" "Default" "NO " "" "" "" "" "" "" "" "" "" "" "BusbarSection" 0 "" "" "" "YES" "NO " "" "" "" ""
+}
+Load (BusNum,ID,Status,AGC,SMW,SMvar,IMW,IMvar,ZMW,ZMvar,DistStatus,DistMWInput,
+   DistMvarInput,Interruptible,MWMax,MWMin,DistMWMax,DistMWMin,DistUnitTypeCode,
+   LoadModelGroup,AreaNumber,ZoneNumber,BANumber,OwnerNumber,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,AllLabels,CustomInteger:0,
+   CustomString:0,CustomString:1,CustomString:3)
+{
+  2237 "1 " "Closed" "YES"  100.00000   33.33000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "  100.00000    0.00000    0.00000    0.00000 "UN" ""      1    115      1    794 "" "" "" "YES" "" "" "" "ELLIS" "24RTP Officer Letter"		// Not in Oncor's List
+}
+Branch (BusNumFrom,BusNumTo,Circuit,BranchDeviceType,ConsolidateAllow,
+   OpenOrCloseBreakersAllow,Status,StatusNormal,ByPass,MeteredBus,R,X,B,G,
+   LineLength,Monitor,LimitSet,LimitMVAA,LimitMVAB,LimitMVAC,LimitMVAD,LimitMVAE,
+   LimitMVAF,LimitMVAG,LimitMVAH,LimitMVAI,LimitMVAJ,LimitMVAK,LimitMVAL,
+   LimitMVAM,LimitMVAN,LimitMVAO,OwnerNum1,OwnerPerc1,OwnerNum2,OwnerPerc2,
+   OwnerNum3,OwnerPerc3,OwnerNum4,OwnerPerc4,OwnerNum5,OwnerPerc5,OwnerNum6,
+   OwnerPerc6,OwnerNum7,OwnerPerc7,OwnerNum8,OwnerPerc8,EMSType,EMSID,EMSLineID,
+   EMSCBTyp,EMSID2From,EMSID2To,DataMaintainerAssign,DataMaintainerInherit,
+   AllLabels,CustomFloat:0,CustomFloat:1)
+{
+   217   2237 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "2237"    0.002513  0.014589  0.004090  0.000000    0.00000 "YES" "Default"  214.0  214.0  229.0  214.0  321.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   115 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  2237   2317 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "2317"    0.001717  0.009971  0.002790  0.000000    0.00000 "YES" "Default"  214.0  214.0  229.0  214.0  321.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   115 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+}
+
+
+//TSR 3711
+SCRIPT
+{
+UnSelectAll(Branch);
+SetData(Branch, [ObjectID, Selected], ["Branch 1906 3389 1", YES]);
+SetData(Branch, [ObjectID, Selected], ["Branch 1907 68090 1", YES]);
+Delete(Branch, SELECTED);
+}
+
+Bus (BusNum,BusName,BusNomVolt,BusSlack,BusB:1,BusG:1,DCLossMultiplier,AreaNum,
+   ZoneNum,BANumber,OwnerNum,SubNum,BusMonEle,LSName,BusVoltLim,BusVoltLimLow:1,
+   BusVoltLimLow:2,BusVoltLimLow:3,BusVoltLimLow:4,BusVoltLimHigh:1,
+   BusVoltLimHigh:2,BusVoltLimHigh:3,BusVoltLimHigh:4,Latitude,Longitude,
+   TopologyBusType,Priority,EMSType,EMSDeviceID,DataMaintainerAssign,
+   DataMaintainerInherit,DataMaintainerInheritBlock,AllLabels,CustomInteger,
+   CustomString,CustomString:1)
+{
+ 15200 "FORBESR1_5"   345.0000 "NO "    0.00000    0.00000 1.000000      1      4      1    794 "" "YES" "Default" "NO " "" "" "" "" "" "" "" "" "" "" "BusbarSection" 0 "" "" "" "YES" "NO " "" "" "" ""
+ 15201 "FORBESR2_5"   345.0000 "NO "    0.00000    0.00000 1.000000      1      4      1    794 "" "YES" "Default" "NO " "" "" "" "" "" "" "" "" "" "" "BusbarSection" 0 "" "" "" "YES" "NO " "" "" "" ""
+}
+Load (BusNum,LoadID,LoadStatus,GenAGCAble,LoadSMW,LoadSMVR,LoadIMW,LoadIMVR,LoadZMW,
+   LoadZMVR,DistStatus,DistMWInput,DistMvarInput,Interruptible,GenMWMax,GenMWMin,
+   DistMWMax,DistMWMin,GenUnitType:1,LoadModelGroup,AreaNum,ZoneNum,BANumber,
+   OwnerNum,EMSType,EMSDeviceID,DataMaintainerAssign,DataMaintainerInherit,
+   AllLabels,CustomInteger,CustomString,CustomString:1,CustomString:3)
+{
+ 15200 "1 " "Closed" "YES"  208.50000   69.50000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "  208.50000    0.00000    0.00000    0.00000 "UN" ""      1    115      1    794 "" "" "" "YES" "" "" "" "HILL" "24RTP Officer Letter"
+ 15201 "1 " "Closed" "YES"  208.50000   69.50000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "  208.50000    0.00000    0.00000    0.00000 "UN" ""      1    115      1    794 "" "" "" "YES" "" "" "" "HILL" "24RTP Officer Letter"
+}
+Branch (BusNum,BusNum:1,LineCircuit,BranchDeviceType,ConsolidateBranch,
+   OpenOrCloseBreakersAllow,LineStatus,NormLineStatus,SeriesCapStatus,
+   LineMeter:1,LineR,LineX,LineC,LineG,LineLength,LineMonEle,LSName,LineAMVA,
+   LineAMVA:1,LineAMVA:2,LineAMVA:3,LineAMVA:4,LineAMVA:5,LineAMVA:6,LineAMVA:7,
+   LineAMVA:8,LineAMVA:9,LineAMVA:10,LineAMVA:11,LineAMVA:12,LineAMVA:13,
+   LineAMVA:14,OwnerNum,OwnPercent,OwnerNum:1,OwnPercent:1,OwnerNum:2,
+   OwnPercent:2,OwnerNum:3,OwnPercent:3,OwnerNum:4,OwnPercent:4,OwnerNum:5,
+   OwnPercent:5,OwnerNum:6,OwnPercent:6,OwnerNum:7,OwnPercent:7,EMSType,
+   EMSDeviceID,EMSDeviceID:1,EMSType:1,EMSDeviceID:2,EMSDeviceID:3,
+   DataMaintainerAssign,DataMaintainerInherit,AllLabels,CustomFloat,
+   CustomFloat:1)
+{
+  1906  15201 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "1906"    0.000087  0.000771  0.014210  0.000000    1.60000 "YES" "Default" 1031.0 1031.0 1100.0 1072.0 10984.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  1907  15200 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "1907"    0.000087  0.000772  0.014160  0.000000    1.60000 "YES" "Default" 1072.0 1072.0 1144.0 1072.0 5172.4    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794  50.000  1365 50.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  3389  15201 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "15201"   0.000873  0.007709  0.142130  0.000000   16.00000 "YES" "Default" 1031.0 1031.0 1100.0 1072.0 10984.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+ 15200  68090 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "15200"   0.001983  0.017528  0.321410  0.000000   36.36000 "YES" "Default" 1072.0 1072.0 1144.0 1072.0 5172.4    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794  50.000  1365 50.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+}
+
+//TSR 3712
+SCRIPT
+{
+UnSelectAll(Branch);
+SetData(Branch, [ObjectID, Selected], ["Branch 1902 1907 1", YES]);
+Delete(Branch, SELECTED);
+}
+
+Bus (BusNum,BusName,BusNomVolt,BusSlack,BusB:1,BusG:1,DCLossMultiplier,AreaNum,
+   ZoneNum,BANumber,OwnerNum,SubNum,BusMonEle,LSName,BusVoltLim,BusVoltLimLow:1,
+   BusVoltLimLow:2,BusVoltLimLow:3,BusVoltLimLow:4,BusVoltLimHigh:1,
+   BusVoltLimHigh:2,BusVoltLimHigh:3,BusVoltLimHigh:4,Latitude,Longitude,
+   TopologyBusType,Priority,EMSType,EMSDeviceID,DataMaintainerAssign,
+   DataMaintainerInherit,DataMaintainerInheritBlock,AllLabels,CustomInteger,
+   CustomString,CustomString:1)
+{
+ 15106 "LILLIAN1C_5"  345.0000 "NO "    0.00000    0.00000 1.000000      1      4      1    794 "" "YES" "Default" "NO " "" "" "" "" "" "" "" "" "" "" "BusbarSection" 0 "" "" "" "YES" "NO " "" "" "" ""
+}
+Load (BusNum,LoadID,LoadStatus,GenAGCAble,LoadSMW,LoadSMVR,LoadIMW,LoadIMVR,LoadZMW,
+   LoadZMVR,DistStatus,DistMWInput,DistMvarInput,Interruptible,GenMWMax,GenMWMin,
+   DistMWMax,DistMWMin,GenUnitType:1,LoadModelGroup,AreaNum,ZoneNum,BANumber,
+   OwnerNum,EMSType,EMSDeviceID,DataMaintainerAssign,DataMaintainerInherit,
+   AllLabels,CustomInteger,CustomString,CustomString:1,CustomString:3)
+{
+ 15106 "1 " "Closed" "YES"  100.00000   33.33000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "  100.00000    0.00000    0.00000    0.00000 "UN" ""      1    115      1    794 "" "" "" "YES" "" "" "" "JOHNSON" "24RTP Officer Letter"
+}
+Branch (BusNum,BusNum:1,LineCircuit,BranchDeviceType,ConsolidateBranch,
+   OpenOrCloseBreakersAllow,LineStatus,NormLineStatus,SeriesCapStatus,
+   LineMeter:1,LineR,LineX,LineC,LineG,LineLength,LineMonEle,LSName,LineAMVA,
+   LineAMVA:1,LineAMVA:2,LineAMVA:3,LineAMVA:4,LineAMVA:5,LineAMVA:6,LineAMVA:7,
+   LineAMVA:8,LineAMVA:9,LineAMVA:10,LineAMVA:11,LineAMVA:12,LineAMVA:13,
+   LineAMVA:14,OwnerNum,OwnPercent,OwnerNum:1,OwnPercent:1,OwnerNum:2,
+   OwnPercent:2,OwnerNum:3,OwnPercent:3,OwnerNum:4,OwnPercent:4,OwnerNum:5,
+   OwnPercent:5,OwnerNum:6,OwnPercent:6,OwnerNum:7,OwnPercent:7,EMSType,
+   EMSDeviceID,EMSDeviceID:1,EMSType:1,EMSDeviceID:2,EMSDeviceID:3,
+   DataMaintainerAssign,DataMaintainerInherit,AllLabels,CustomFloat,
+   CustomFloat:1)
+{
+  1902  15106 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "1902"    0.001090  0.009595  0.176530  0.000000   19.90000 "YES" "Default" 1572.0 1572.0 1859.0 1595.0 6917.4    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  1907  15106 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "15106"   0.000230  0.002025  0.037260  0.000000    4.20000 "YES" "Default" 1572.0 1572.0 1859.0 1595.0 6917.4    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+}
+
+
+//TSR 3723
+SCRIPT
+{
+UnSelectAll(Branch);
+SetData(Branch, [ObjectID, Selected], ["Branch 2432 3102 1", YES]);
+SetData(Branch, [ObjectID, Selected], ["Branch 2432 3105 1", YES]);
+Delete(Branch, SELECTED);
+}
+
+Bus (BusNum,BusName,BusNomVolt,BusSlack,BusB:1,BusG:1,DCLossMultiplier,AreaNum,
+   ZoneNum,BANumber,OwnerNum,SubNum,BusMonEle,LSName,BusVoltLim,BusVoltLimLow:1,
+   BusVoltLimLow:2,BusVoltLimLow:3,BusVoltLimLow:4,BusVoltLimHigh:1,
+   BusVoltLimHigh:2,BusVoltLimHigh:3,BusVoltLimHigh:4,Latitude,Longitude,
+   TopologyBusType,Priority,EMSType,EMSDeviceID,DataMaintainerAssign,
+   DataMaintainerInherit,DataMaintainerInheritBlock,AllLabels,CustomInteger,
+   CustomString,CustomString:1)
+{
+ 15202 "KNGSCRK1_5"   345.0000 "NO "    0.00000    0.00000 1.000000      1      4      1    794 "" "YES" "Default" "NO " "" "" "" "" "" "" "" "" "" "" "BusbarSection" 0 "" "" "" "YES" "NO " "" "" "" ""
+ 15203 "KNGSCRK2_5"   345.0000 "NO "    0.00000    0.00000 1.000000      1      4      1    794 "" "YES" "Default" "NO " "" "" "" "" "" "" "" "" "" "" "BusbarSection" 0 "" "" "" "YES" "NO " "" "" "" ""
+}
+Load (BusNum,LoadID,LoadStatus,GenAGCAble,LoadSMW,LoadSMVR,LoadIMW,LoadIMVR,LoadZMW,
+   LoadZMVR,DistStatus,DistMWInput,DistMvarInput,Interruptible,GenMWMax,GenMWMin,
+   DistMWMax,DistMWMin,GenUnitType:1,LoadModelGroup,AreaNum,ZoneNum,BANumber,
+   OwnerNum,EMSType,EMSDeviceID,DataMaintainerAssign,DataMaintainerInherit,
+   AllLabels,CustomInteger,CustomString,CustomString:1,CustomString:3)
+{
+ 15202 "1 " "Closed" "YES"  350.00000  116.67000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "  350.00000    0.00000    0.00000    0.00000 "UN" ""      1    114      1    794 "" "" "" "YES" "" "" "" "ZANDT" "24RTP Officer Letter"
+ 15203 "1 " "Closed" "YES"  350.00000  116.67000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "  350.00000    0.00000    0.00000    0.00000 "UN" ""      1    114      1    794 "" "" "" "YES" "" "" "" "ZANDT" "24RTP Officer Letter"
+}
+Branch (BusNum,BusNum:1,LineCircuit,BranchDeviceType,ConsolidateBranch,
+   OpenOrCloseBreakersAllow,LineStatus,NormLineStatus,SeriesCapStatus,
+   LineMeter:1,LineR,LineX,LineC,LineG,LineLength,LineMonEle,LSName,LineAMVA,
+   LineAMVA:1,LineAMVA:2,LineAMVA:3,LineAMVA:4,LineAMVA:5,LineAMVA:6,LineAMVA:7,
+   LineAMVA:8,LineAMVA:9,LineAMVA:10,LineAMVA:11,LineAMVA:12,LineAMVA:13,
+   LineAMVA:14,OwnerNum,OwnPercent,OwnerNum:1,OwnPercent:1,OwnerNum:2,
+   OwnPercent:2,OwnerNum:3,OwnPercent:3,OwnerNum:4,OwnPercent:4,OwnerNum:5,
+   OwnPercent:5,OwnerNum:6,OwnPercent:6,OwnerNum:7,OwnPercent:7,EMSType,
+   EMSDeviceID,EMSDeviceID:1,EMSType:1,EMSDeviceID:2,EMSDeviceID:3,
+   DataMaintainerAssign,DataMaintainerInherit,AllLabels,CustomFloat,
+   CustomFloat:1)
+{
+  2432  15202 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "2432"    0.000769  0.006694  0.124440  0.000000   14.00000 "YES" "Default" 1031.0 1031.0 1100.0 1072.0 3439.8    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  2432  15203 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "2432"    0.000742  0.006667  0.123920  0.000000   14.00000 "YES" "Default" 1031.0 1031.0 1100.0 1072.0 4410.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  3102  15203 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "15203"   0.003598  0.032333  0.600940  0.000000   67.89000 "YES" "Default" 1031.0 1031.0 1100.0 1072.0 4410.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  3105  15202 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "15202"   0.003461  0.030126  0.560070  0.000000   63.00000 "YES" "Default" 1031.0 1031.0 1100.0 1072.0 3439.8    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+}
+
+
+//TSR 3745
+SCRIPT
+{
+UnSelectAll(Branch);
+SetData(Branch, [ObjectID, Selected], ["Branch 2398 2427 1", YES]);
+SetData(Branch, [ObjectID, Selected], ["Branch 2427 2946 1", YES]);
+Delete(Branch, SELECTED);
+}
+
+Bus (Number,Name,NomkV,Slack,NomB,NomG,DCLossMultiplier,AreaNumber,ZoneNumber,
+   BANumber,OwnerNumber,SubNumber,Monitor,LimitSet,UseSpecificLimits,LimitLowA,
+   LimitLowB,LimitLowC,LimitLowD,LimitHighA,LimitHighB,LimitHighC,LimitHighD,
+   Latitude,Longitude,TopologyBusType,Priority,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,DataMaintainerInheritBlock,
+   AllLabels,CustomInteger:0,CustomString:0,CustomString:1)
+{
+  3070 "GREENRD_5"    345.0000 "NO "    0.00000    0.00000 1.000000      1      4      1    794 "" "YES" "Default" "YES" 0.950000 0.900000 0.900000 0.900000 1.050000 1.050000 1.100000 1.100000 "" "" "BusbarSection" 0 "" "" "" "YES" "NO " "" "" "" ""
+}
+Load (BusNum,ID,Status,AGC,SMW,SMvar,IMW,IMvar,ZMW,ZMvar,DistStatus,DistMWInput,
+   DistMvarInput,Interruptible,MWMax,MWMin,DistMWMax,DistMWMin,DistUnitTypeCode,
+   LoadModelGroup,AreaNumber,ZoneNumber,BANumber,OwnerNumber,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,AllLabels,CustomInteger:0,
+   CustomString:0,CustomString:1,CustomString:3)
+{
+  3070 "1 " "Closed" "YES"  288.00001   96.00000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "  288.00001    0.00000    0.00000    0.00000 "UN" ""      1      4      1    794 "" "" "" "YES" "" "" "" "DALLAS" "24RTP Officer Letter"		// Not in Oncor's List
+}
+Branch (BusNumFrom,BusNumTo,Circuit,BranchDeviceType,ConsolidateAllow,
+   OpenOrCloseBreakersAllow,Status,StatusNormal,ByPass,MeteredBus,R,X,B,G,
+   LineLength,Monitor,LimitSet,LimitMVAA,LimitMVAB,LimitMVAC,LimitMVAD,LimitMVAE,
+   LimitMVAF,LimitMVAG,LimitMVAH,LimitMVAI,LimitMVAJ,LimitMVAK,LimitMVAL,
+   LimitMVAM,LimitMVAN,LimitMVAO,OwnerNum1,OwnerPerc1,OwnerNum2,OwnerPerc2,
+   OwnerNum3,OwnerPerc3,OwnerNum4,OwnerPerc4,OwnerNum5,OwnerPerc5,OwnerNum6,
+   OwnerPerc6,OwnerNum7,OwnerPerc7,OwnerNum8,OwnerPerc8,EMSType,EMSID,EMSLineID,
+   EMSCBTyp,EMSID2From,EMSID2To,DataMaintainerAssign,DataMaintainerInherit,
+   AllLabels,CustomFloat:0,CustomFloat:1)
+{
+  2398   3070 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "2398"    0.000380  0.005976  0.117140  0.000000   12.69000 "YES" "Default" 1631.0 1631.0 1839.0 1631.0 12118.1    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  2427   3070 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "3070"    0.000150  0.002306  0.046510  0.000000    5.00000 "YES" "Default" 1631.0 1631.0 2988.0 1631.0 99999.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  2427   3070 "2 " "Line"        "" "" "Closed" "Closed" "NO"  "3070"    0.000150  0.002306  0.046510  0.000000    5.00000 "YES" "Default" 1631.0 1631.0 2988.0 1631.0 99999.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  2946   3070 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "3070"    0.000222  0.003480  0.068990  0.000000    7.47000 "YES" "Default" 1631.0 1631.0 1839.0 1631.0 16943.3    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+}
+
+
+//TSR 3770
+SCRIPT
+{
+UnSelectAll(Branch);
+SetData(Branch, [ObjectID, Selected], ["Branch 2427 2466 1", YES]);
+SetData(Branch, [ObjectID, Selected], ["Branch 2427 3159 1", YES]);
+Delete(Branch, SELECTED);
+}
+
+Bus (Number,Name,NomkV,Slack,NomB,NomG,DCLossMultiplier,AreaNumber,ZoneNumber,
+   BANumber,OwnerNumber,SubNumber,Monitor,LimitSet,UseSpecificLimits,LimitLowA,
+   LimitLowB,LimitLowC,LimitLowD,LimitHighA,LimitHighB,LimitHighC,LimitHighD,
+   Latitude,Longitude,TopologyBusType,Priority,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,DataMaintainerInheritBlock,
+   AllLabels,CustomInteger:0,CustomString:0,CustomString:1)
+{
+  2217 "BATCHLRD_8"   345.0000 "NO "    0.00000    0.00000 1.000000      1      4      1    794 "" "YES" "Default" "NO " "" "" "" "" "" "" "" "" "" "" "BusbarSection" 0 "" "" "" "YES" "NO " "" "" "" ""
+}
+Load (BusNum,ID,Status,AGC,SMW,SMvar,IMW,IMvar,ZMW,ZMvar,DistStatus,DistMWInput,
+   DistMvarInput,Interruptible,MWMax,MWMin,DistMWMax,DistMWMin,DistUnitTypeCode,
+   LoadModelGroup,AreaNumber,ZoneNumber,BANumber,OwnerNumber,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,AllLabels,CustomInteger:0,
+   CustomString:0,CustomString:1,CustomString:3)
+{
+// Only found 400MW in Oncor's List
+  2217 "1 " "Closed" "YES"  492.00001  164.00000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "  492.00001    0.00000    0.00000    0.00000 "UN" ""      1    114      1    794 "" "" "" "YES" "" "" "" "ELLIS" "24RTP Officer Letter"
+}
+Branch (BusNumFrom,BusNumTo,Circuit,BranchDeviceType,ConsolidateAllow,
+   OpenOrCloseBreakersAllow,Status,StatusNormal,ByPass,MeteredBus,R,X,B,G,
+   LineLength,Monitor,LimitSet,LimitMVAA,LimitMVAB,LimitMVAC,LimitMVAD,LimitMVAE,
+   LimitMVAF,LimitMVAG,LimitMVAH,LimitMVAI,LimitMVAJ,LimitMVAK,LimitMVAL,
+   LimitMVAM,LimitMVAN,LimitMVAO,OwnerNum1,OwnerPerc1,OwnerNum2,OwnerPerc2,
+   OwnerNum3,OwnerPerc3,OwnerNum4,OwnerPerc4,OwnerNum5,OwnerPerc5,OwnerNum6,
+   OwnerPerc6,OwnerNum7,OwnerPerc7,OwnerNum8,OwnerPerc8,EMSType,EMSID,EMSLineID,
+   EMSCBTyp,EMSID2From,EMSID2To,DataMaintainerAssign,DataMaintainerInherit,
+   AllLabels,CustomFloat:0,CustomFloat:1)
+{
+  2217   2427 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "2427"    0.000133  0.002132  0.042890  0.000000    4.60000 "YES" "Default" 1631.0 1631.0 1838.0 1631.0 4613.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  2217   2427 "2 " "Line"        "" "" "Closed" "Closed" "NO"  "2427"    0.000140  0.002130  0.043330  0.000000    4.60000 "YES" "Default" 1631.0 1631.0 1839.0 1631.0 4410.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  2217   2466 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "2217"    0.000620  0.009400  0.191200  0.000000   20.30000 "YES" "Default" 1631.0 1631.0 1839.0 1631.0 4410.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  2217   3159 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "2217"    0.001017  0.016317  0.328230  0.000000   35.20000 "YES" "Default" 1631.0 1631.0 1838.0 1631.0 4613.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+}
+
+
+//TSR 3798
+SCRIPT
+{
+UnSelectAll(Branch);
+SetData(Branch, [ObjectID, Selected], ["Branch 2410 2420 1", YES]);
+Delete(Branch, SELECTED);
+}
+
+Bus (Number,Name,NomkV,Slack,NomB,NomG,DCLossMultiplier,AreaNumber,ZoneNumber,
+   BANumber,OwnerNumber,SubNumber,Monitor,LimitSet,UseSpecificLimits,LimitLowA,
+   LimitLowB,LimitLowC,LimitLowD,LimitHighA,LimitHighB,LimitHighC,LimitHighD,
+   Latitude,Longitude,TopologyBusType,Priority,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,DataMaintainerInheritBlock,
+   AllLabels,CustomInteger:0,CustomString:0,CustomString:1)
+{
+ 15204 "MRRFLD_RD1_5" 345.0000 "NO "    0.00000    0.00000 1.000000      1      4      1    794 "" "YES" "Default" "NO " "" "" "" "" "" "" "" "" "" "" "BusbarSection" 0 "" "" "" "YES" "NO " "" "" "" ""
+}
+Load (BusNum,ID,Status,AGC,SMW,SMvar,IMW,IMvar,ZMW,ZMvar,DistStatus,DistMWInput,
+   DistMvarInput,Interruptible,MWMax,MWMin,DistMWMax,DistMWMin,DistUnitTypeCode,
+   LoadModelGroup,AreaNumber,ZoneNumber,BANumber,OwnerNumber,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,AllLabels,CustomInteger:0,
+   CustomString:0,CustomString:1,CustomString:3)
+{
+		// Not in Oncor's List
+ 15204 "1 " "Closed" "YES"  402.00000  134.00000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "  402.00000    0.00000    0.00000    0.00000 "UN" ""      1    114      1    794 "" "" "" "YES" "" "" "" "Dallas" "24RTP Officer Letter"
+}
+Branch (BusNumFrom,BusNumTo,Circuit,BranchDeviceType,ConsolidateAllow,
+   OpenOrCloseBreakersAllow,Status,StatusNormal,ByPass,MeteredBus,R,X,B,G,
+   LineLength,Monitor,LimitSet,LimitMVAA,LimitMVAB,LimitMVAC,LimitMVAD,LimitMVAE,
+   LimitMVAF,LimitMVAG,LimitMVAH,LimitMVAI,LimitMVAJ,LimitMVAK,LimitMVAL,
+   LimitMVAM,LimitMVAN,LimitMVAO,OwnerNum1,OwnerPerc1,OwnerNum2,OwnerPerc2,
+   OwnerNum3,OwnerPerc3,OwnerNum4,OwnerPerc4,OwnerNum5,OwnerPerc5,OwnerNum6,
+   OwnerPerc6,OwnerNum7,OwnerPerc7,OwnerNum8,OwnerPerc8,EMSType,EMSID,EMSLineID,
+   EMSCBTyp,EMSID2From,EMSID2To,DataMaintainerAssign,DataMaintainerInherit,
+   AllLabels,CustomFloat:0,CustomFloat:1)
+{
+  2410  15204 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "2410"    0.000314  0.005017  0.099750  0.000000   10.80000 "YES" "Default" 1568.0 1568.0 1767.0 1631.0 4410.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  2420  15204 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "15204"   0.000046  0.000743  0.014770  0.000000    1.60000 "YES" "Default" 1568.0 1568.0 1767.0 1631.0 4410.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+}
+
+//TSR 2578
+SCRIPT
+{
+UnSelectAll(Branch);
+SetData(Branch, [ObjectID, Selected], ["Branch 1907 1921 1", YES]);
+Delete(Branch, SELECTED);
+}
+
+Bus (Number,Name,NomkV,Slack,NomB,NomG,DCLossMultiplier,AreaNumber,ZoneNumber,
+   BANumber,OwnerNumber,SubNumber,Monitor,LimitSet,UseSpecificLimits,LimitLowA,
+   LimitLowB,LimitLowC,LimitLowD,LimitHighA,LimitHighB,LimitHighC,LimitHighD,
+   Latitude,Longitude,TopologyBusType,Priority,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,DataMaintainerInheritBlock,
+   AllLabels,CustomInteger:0,CustomString:0,CustomString:1)
+{
+  2632 "MILLERRD_5"   345.0000 "NO "    0.00000    0.00000 1.000000      1      4      1    794 "" "YES" "Default" "NO " "" "" "" "" "" "" "" "" "" "" "BusbarSection" 0 "" "" "" "YES" "NO " "" "" "" ""
+}
+Load (BusNum,ID,Status,AGC,SMW,SMvar,IMW,IMvar,ZMW,ZMvar,DistStatus,DistMWInput,
+   DistMvarInput,Interruptible,MWMax,MWMin,DistMWMax,DistMWMin,DistUnitTypeCode,
+   LoadModelGroup,AreaNumber,ZoneNumber,BANumber,OwnerNumber,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,AllLabels,CustomInteger:0,
+   CustomString:0,CustomString:1,CustomString:3)
+{
+		// Found 500 MW in Oncor's List
+  2632 "1 " "Closed" "YES"  300.00000   100.0000    0.00000    0.00000    0.00000    0.00000 "Open"    0.00000    0.00000 "NO "  100.00000    0.00000    0.00000    0.00000 "UN" ""      1    115      1    794 "" "" "" "YES" "" "" "" "ELLIS" "24RTP Officer Letter"
+}
+Branch (BusNumFrom,BusNumTo,Circuit,BranchDeviceType,ConsolidateAllow,
+   OpenOrCloseBreakersAllow,Status,StatusNormal,ByPass,MeteredBus,R,X,B,G,
+   LineLength,Monitor,LimitSet,LimitMVAA,LimitMVAB,LimitMVAC,LimitMVAD,LimitMVAE,
+   LimitMVAF,LimitMVAG,LimitMVAH,LimitMVAI,LimitMVAJ,LimitMVAK,LimitMVAL,
+   LimitMVAM,LimitMVAN,LimitMVAO,OwnerNum1,OwnerPerc1,OwnerNum2,OwnerPerc2,
+   OwnerNum3,OwnerPerc3,OwnerNum4,OwnerPerc4,OwnerNum5,OwnerPerc5,OwnerNum6,
+   OwnerPerc6,OwnerNum7,OwnerPerc7,OwnerNum8,OwnerPerc8,EMSType,EMSID,EMSLineID,
+   EMSCBTyp,EMSID2From,EMSID2To,DataMaintainerAssign,DataMaintainerInherit,
+   AllLabels,CustomFloat:0,CustomFloat:1)
+{
+  1907   2632 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "1907"    0.000030  0.000422  0.011030  0.000000    1.00000 "YES" "Default" 1568.0 1568.0 1766.7 1631.3 5997.2    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+  1921   2632 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "2632"    0.000820  0.011398  0.297840  0.000000   27.00000 "YES" "Default" 1568.0 1568.0 1766.7 1631.3 5997.2    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" "" ""
+}
+

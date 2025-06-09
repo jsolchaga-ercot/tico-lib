@@ -1,0 +1,232 @@
+//--------------------------------------------------------------------------------
+// TOPOLOGICAL CHANGES FROM POWERWORLD DIFFERENCE CASE TOOL
+//   EXE BUILD DATE: April 15, 2025
+//       SAVED DATE: May 8, 2025 4:17:10 PM
+// REMOVED ELEMENTS:     INCLUDED
+//     NEW ELEMENTS:     INCLUDED
+// CHANGED ELEMENTS:     INCLUDED
+//     PRESENT CASE: /Users/JSOLCHAGA/OneDrive - ERCOT/Documents/Python/tico-lib/backout_tool/23SSWG_2029_SUM1_U1_Final_10092023_v70_base.pwb
+//                   IN-MEMORY CHANGES, OR IN DIFFERENT DIRECTORY LOCATION
+//        BASE CASE: /Users/JSOLCHAGA/OneDrive - ERCOT/Documents/Python/tico-lib/backout_tool/23SSWG_2029_SUM1_U1_Final_10092023_v70_base.pwb
+//--------------------------------------------------------------------------------
+
+SCRIPT
+{
+EnterMode(Edit);
+}
+
+//--------------------------------------------------------------------------------
+// THE FOLLOWING SECTION CONTAINS REMOVED ELEMENTS, WHICH ARE ONLY IN BASE CASE
+//--------------------------------------------------------------------------------
+SCRIPT
+{
+UnSelectAll(StudyMWTransactions);
+SetData(StudyMWTransactions, [ObjectID, Selected], ["StudyMWTransactions 1 20 RAW_LOAD", YES]);
+Delete(StudyMWTransactions, SELECTED);
+}
+SCRIPT
+{
+UnSelectAll(Branch);
+}
+Branch (ObjectID, Selected)
+{
+"Branch 217 2237 1" YES
+"Branch 442 1303 1" YES
+"Branch 802 2165 1" YES
+"Branch 825 2165 1" YES
+"Branch 968 2497 1" YES
+"Branch 1303 1905 1" YES
+"Branch 1424 15205 2" YES
+"Branch 1446 15205 2" YES
+"Branch 1699 12679 1" YES
+"Branch 1860 15104 1" YES
+"Branch 1871 15102 1" YES
+"Branch 1872 15103 1" YES
+"Branch 1902 15106 1" YES
+"Branch 1906 15201 1" YES
+"Branch 1907 2632 1" YES
+"Branch 1907 15106 1" YES
+"Branch 1907 15200 1" YES
+"Branch 1921 2632 1" YES
+"Branch 2082 15104 1" YES
+"Branch 2082 15105 1" YES
+"Branch 2217 2427 1" YES
+"Branch 2217 2427 2" YES
+"Branch 2217 2466 1" YES
+"Branch 2217 3159 1" YES
+"Branch 2237 2317 1" YES
+"Branch 2398 3070 1" YES
+"Branch 2410 15204 1" YES
+"Branch 2420 15204 1" YES
+"Branch 2427 3070 1" YES
+"Branch 2427 3070 2" YES
+"Branch 2429 2600 1" YES
+"Branch 2429 2600 2" YES
+"Branch 2432 15202 1" YES
+"Branch 2432 15203 1" YES
+"Branch 2497 2593 1" YES
+"Branch 2946 3070 1" YES
+"Branch 3102 15203 1" YES
+"Branch 3105 15202 1" YES
+"Branch 3389 15201 1" YES
+"Branch 3446 3474 1" YES
+"Branch 3474 3544 1" YES
+"Branch 12065 15105 1" YES
+"Branch 12677 12679 1" YES
+"Branch 15100 15102 1" YES
+"Branch 15101 15103 1" YES
+"Branch 15200 68090 1" YES
+}
+SCRIPT
+{
+Delete(Branch, SELECTED);
+}
+SCRIPT
+{
+UnSelectAll(Load);
+}
+Load (ObjectID, Selected)
+{
+"Load 1303 1" YES
+"Load 1714 2" YES
+"Load 1749 2" YES
+"Load 1874 1" YES
+"Load 1875 1" YES
+"Load 2082 1" YES
+"Load 2165 1" YES
+"Load 2217 1" YES
+"Load 2229 2" YES
+"Load 2237 1" YES
+"Load 2260 2" YES
+"Load 2317 3" YES
+"Load 2427 1" YES
+"Load 2427 2" YES
+"Load 2429 1" YES
+"Load 2431 1" YES
+"Load 2438 6" YES
+"Load 2497 1" YES
+"Load 2568 3" YES
+"Load 2570 4" YES
+"Load 2600 1" YES
+"Load 2632 1" YES
+"Load 2691 4" YES
+"Load 2800 3" YES
+"Load 2801 4" YES
+"Load 2814 3" YES
+"Load 2815 2" YES
+"Load 2848 1" YES
+"Load 3065 4" YES
+"Load 3069 1" YES
+"Load 3069 3" YES
+"Load 3070 1" YES
+"Load 3083 1" YES
+"Load 3474 1" YES
+"Load 12394 2" YES
+"Load 12395 1" YES
+"Load 12491 1" YES
+"Load 12679 1" YES
+"Load 15102 1" YES
+"Load 15103 1" YES
+"Load 15104 1" YES
+"Load 15105 1" YES
+"Load 15106 1" YES
+"Load 15200 1" YES
+"Load 15201 1" YES
+"Load 15202 1" YES
+"Load 15203 1" YES
+"Load 15204 1" YES
+"Load 15205 1" YES
+"Load 150211 O7" YES
+"Load 152534 1" YES
+}
+SCRIPT
+{
+Delete(Load, SELECTED);
+}
+SCRIPT
+{
+UnSelectAll(Bus);
+}
+Bus (ObjectID, Selected)
+{
+"Bus 1303" YES
+"Bus 2165" YES
+"Bus 2217" YES
+"Bus 2237" YES
+"Bus 2497" YES
+"Bus 2600" YES
+"Bus 2632" YES
+"Bus 3070" YES
+"Bus 3474" YES
+"Bus 12679" YES
+"Bus 15102" YES
+"Bus 15103" YES
+"Bus 15104" YES
+"Bus 15105" YES
+"Bus 15106" YES
+"Bus 15200" YES
+"Bus 15201" YES
+"Bus 15202" YES
+"Bus 15203" YES
+"Bus 15204" YES
+"Bus 15205" YES
+}
+SCRIPT
+{
+Delete(Bus, SELECTED);
+}
+SCRIPT
+{
+UnSelectAll(Owner);
+SetData(Owner, [ObjectID, Selected], ["Owner 148", YES]);
+Delete(Owner, SELECTED);
+}
+
+//--------------------------------------------------------------------------------
+// THE FOLLOWING SECTION CONTAINS NEW ELEMENTS, WHICH ARE ONLY IN PRESENT CASE
+//--------------------------------------------------------------------------------
+Branch (BusNumFrom,BusNumTo,Circuit,BranchDeviceType,ConsolidateAllow,
+   OpenOrCloseBreakersAllow,Status,StatusNormal,ByPass,MeteredBus,R,X,B,G,
+   LineLength,Monitor,LimitSet,LimitMVAA,LimitMVAB,LimitMVAC,LimitMVAD,LimitMVAE,
+   LimitMVAF,LimitMVAG,LimitMVAH,LimitMVAI,LimitMVAJ,LimitMVAK,LimitMVAL,
+   LimitMVAM,LimitMVAN,LimitMVAO,OwnerNum1,OwnerPerc1,OwnerNum2,OwnerPerc2,
+   OwnerNum3,OwnerPerc3,OwnerNum4,OwnerPerc4,OwnerNum5,OwnerPerc5,OwnerNum6,
+   OwnerPerc6,OwnerNum7,OwnerPerc7,OwnerNum8,OwnerPerc8,EMSType,EMSID,EMSLineID,
+   EMSCBTyp,EMSID2From,EMSID2To,DataMaintainerAssign,DataMaintainerInherit,
+   CustomFloat:0,CustomFloat:1)
+{
+   217   2317 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "2317"    0.004230  0.024560  0.006880  0.000000    0.00000 "YES" "Default"  214.0  214.0  229.0  214.0  321.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   115 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" ""
+   442   1905 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "442"     0.002380  0.013520  0.003890  0.000000    3.50000 "YES" "Default"  206.0  206.0  220.0  214.0 88888.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES"   214.000000   214.000000
+   802    825 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "802"     0.003010  0.035570  0.004380  0.000000    6.05000 "YES" "Default"  386.0  417.0  417.0  417.0 88888.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   229 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" ""
+   968   2593 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "2593"    0.003040  0.023540  0.007360  0.000000    4.89000 "YES" "Default"  326.0  326.0  368.0  326.0 1235.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" ""
+  1424   1446 "2 " "Line"        "" "" "Closed" "Closed" "NO"  "1424"    0.003800  0.021550  0.006200  0.000000    5.60000 "YES" "Default"  390.0  390.0  425.0  394.0 4413.2    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES"   394.000000   394.000000
+  1699  12677 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "1699"    0.004610  0.042840  0.016850  0.000000   16.23000 "YES" "Default"  313.6  313.6  353.3  326.0 88888.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES"   326.000000   326.000000
+  1860   2082 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "1860"    0.003860  0.021940  0.006320  0.000000    5.70000 "YES" "Default"  390.0  390.0  425.0  394.0 4039.6    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES"   394.000000   394.000000
+  1871  15100 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "1871"    0.000260  0.002300  0.001460  0.000000    0.70000 "YES" "Default"  482.0  482.0  524.0  502.0  753.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES"   502.000000   502.000000
+  1872  15101 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "15101"   0.000260  0.002300  0.001460  0.000000    0.70000 "YES" "Default"  482.0  482.0  524.0  502.0  753.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES"   502.000000   502.000000
+  1902   1907 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "1902"    0.001320  0.011620  0.213790  0.000000   24.10000 "YES" "Default" 1572.0 1572.0 1859.0 1595.0 6917.4    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES"  1595.000000  1595.000000
+  1906   3389 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "1906"    0.000960  0.008480  0.156340  0.000000   17.60000 "YES" "Default" 1031.0 1031.0 1100.0 1072.0 10984.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES"  1072.000000  1072.000000
+  1907   1921 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "1907"    0.000850  0.011820  0.308870  0.000000   28.00000 "YES" "Default" 1568.0 1568.0 1766.7 1631.3 5997.2    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES"  1631.300000  1631.300000
+  1907  68090 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "1907"    0.002070  0.018300  0.335570  0.000000   37.96000 "YES" "Default" 1072.0 1072.0 1144.0 1072.0 5172.4    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794  50.000  1365 50.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" ""
+  2082  12065 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "2082"    0.003460  0.019630  0.005650  0.000000    5.10000 "YES" "Default"  390.0  390.0  425.0  394.0 2741.3    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES"   394.000000   394.000000
+  2410   2420 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "2410"    0.000360  0.005760  0.114520  0.000000   12.40000 "YES" "Default" 1568.0 1568.0 1767.0 1631.0 4410.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES"  1631.000000  1631.000000
+  2427   2466 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "2427"    0.000760  0.011530  0.234530  0.000000   24.90000 "YES" "Default" 1631.0 1631.0 1839.0 1631.0 4410.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" ""
+  2427   3159 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "2427"    0.001150  0.018450  0.371120  0.000000   39.80000 "YES" "Default" 1631.0 1631.0 1838.0 1631.0 4613.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" "" ""
+  2432   3102 "1 " "Line"        "" "" "Closed" "Closed" "NO"  "2432"    0.004340  0.039000  0.724860  0.000000   81.89000 "YES" "Default" 1031.0 1031.0 1100.0 1072.0 4410.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0   794 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES"  1072.000000  1072.000000
+}
+
+//--------------------------------------------------------------------------------
+// THE FOLLOWING SECTION CONTAINS CHANGED ELEMENTS, WHICH ARE IN BOTH CASES
+//--------------------------------------------------------------------------------
+Load (BusNum,ID,Status,AGC,SMW,SMvar,IMW,IMvar,ZMW,ZMvar,DistStatus,DistMWInput,
+   DistMvarInput,Interruptible,MWMax,MWMin,DistMWMax,DistMWMin,DistUnitTypeCode,
+   LoadModelGroup,AreaNumber,ZoneNumber,BANumber,OwnerNumber,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,AllLabels,CustomInteger:0,
+   CustomString:0,CustomString:1)
+{
+ 12303 "1 " ""       ""      70.00000   23.30000 "" "" "" "" "" "" "" ""   70.00000 "" "" "" "" "_same_" "" "" "" "" "" "" "_same_" "" "_same_" _same_ "_same_" "_same_"
+ 12304 "1 " ""       ""      70.00000   23.30000 "" "" "" "" "" "" "" ""   70.00000 "" "" "" "" "_same_" "" "" "" "" "" "" "_same_" "" "_same_" _same_ "_same_" "_same_"
+ 13430 "2 " ""       ""    "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "_same_" "" "" "" "" "" "" "_same_" "" "_same_" "" "" "_same_"
+}
+
+
